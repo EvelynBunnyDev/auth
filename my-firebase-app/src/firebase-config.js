@@ -1,5 +1,7 @@
+// Import the functions from the SDKs
 import { initializeApp } from "firebase/app"; // takes the configuration object and initializes your Firebase application instance
 import { getAuth } from "firebase/auth"; // takes the initialized Firebase application instance and returns the authentication service for the app
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -12,4 +14,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+const analytics = getAnalytics(app);
 auth.useEmulator("http://localhost:9099");
